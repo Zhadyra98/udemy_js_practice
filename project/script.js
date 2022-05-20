@@ -31,11 +31,30 @@ let personalMovieDB = {
     genres : [],
     privat : false
 };
-let lastWatchedFilm = prompt("Один из последних просмотренных фильмов?",'');
-let lastWatchedFilmRate = prompt("На сколько оцените его?",'');
-personalMovieDB.movies[lastWatchedFilm]=lastWatchedFilmRate;
+
+for(let i=0; i<numberOfFilms; i++){
+    let lastWatchedFilm = prompt("Один из последних просмотренных фильмов?",'');
+    if(lastWatchedFilm.length==0 || lastWatchedFilm.length>50 ){
+        i--;
+        continue;
+    }
+    let lastWatchedFilmRate = prompt("На сколько оцените его?",'');
+    personalMovieDB.movies[lastWatchedFilm]=lastWatchedFilmRate;
+}
+
+if(numberOfFilms<10){
+    alert('Просмотрено довольно мало фильмов');
+}else if(numberOfFilms<30){
+    alert('Вы классический зритель');
+}else if (numberOfFilms>=30){
+    alert('Вы киноман');
+}else{
+    alert('Произошла ошибка');
+}
+
 
 console.log(personalMovieDB);
+
 
 
 

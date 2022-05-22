@@ -64,14 +64,3 @@ const personalMovieDB = {
         personalMovieDB.privat = !personalMovieDB.privat;
     }
 };
-
-
-
-
-
-
-
-
-
-
-
